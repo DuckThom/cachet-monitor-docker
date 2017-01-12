@@ -15,9 +15,9 @@ RUN wget https://github.com/CastawayLabs/cachet-monitor/releases/download/$CACHE
 
 RUN apt-get remove -y \
     wget \
-    ca-certificates
- && apt-get clean \
- && apt-get autoremove
+    ca-certificates \
+ && apt-get -y clean \
+ && apt-get -y autoremove
 
 COPY cachet-monitor.config.json /etc/cachet-monitor.config.json
 
